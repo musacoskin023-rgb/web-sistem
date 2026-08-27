@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ROYAL BARBER | Premium Erkek Kuaförü</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #d4af37;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 7% 80px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(0,0,0,.88) 0%,
+                    rgba(0,0,0,.58) 45%,
+                    rgba(0,0,0,.72) 100%),
+                url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            animation: fadeUp 1s ease;
+        }
+
+        .small-title {
+            color: #d4af37;
+            font-size: 13px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(65px, 9vw, 125px);
+            line-height: .82;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 550px;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 17px 32px;
+            background: #d4af37;
+            color: #080808;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212,175,55,.2);
+        }
+
+        section {
+            padding: 120px 7%;
+        }
+
+        .section-label {
+            color: #d4af37;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            text-align: center;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(45px, 6vw, 70px);
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #171717, #0d0d0d);
+            border: 1px solid rgba(212,175,55,.15);
+            padding: 45px 30px;
+            text-align: center;
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212,175,55,.6);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .about {
+            background: #0d0d0d;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            color: #aaa;
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: #d4af37;
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #ccc;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #555;
+            border-top: 1px solid #181818;
+            font-size: 12px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 6% 70px;
+            }
+
+            .hero h1 {
+                font-size: 70px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 85px 6%;
+            }
+
+            .contact-info {
+                gap: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ROYAL</div>
+
+    <nav>
+        <a href="#anasayfa">ANA SAYFA</a>
+        <a href="#hizmetler">HİZMETLER</a>
+        <a href="#hakkimizda">HAKKIMIZDA</a>
+        <a href="#iletisim">İLETİŞİM</a>
+    </nav>
+</header>
+
+
+<section class="hero" id="anasayfa">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            PREMIUM BARBER EXPERIENCE
+        </div>
+
+        <h1>
+            Tarzınızın<br>
+            <span class="gold">Yeni Adresi.</span>
+        </h1>
+
+        <p>
+            Modern erkek bakımının seçkin adresi.
+            Profesyonel saç kesimi, sakal tasarımı ve
+            kişisel bakım deneyimini yeniden keşfedin.
+        </p>
+
+        <a href="#iletisim" class="button">
+            RANDEVU AL
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="hizmetler">
+
+    <div class="section-label">HİZMETLER</div>
+
+    <h2 class="title">Size Özel Bakım</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">✂</div>
+
+            <h3>Saç Kesimi</h3>
+
+            <p>
+                Yüz şeklinize ve tarzınıza uygun
+                profesyonel saç kesimi.
+            </p>
+
+            <div class="price">500 TL</div>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">◆</div>
+
+            <h3>Sakal Tasarımı</h3>
+
+            <p>
+                Profesyonel şekillendirme ile
+                yüzünüze uygun sakal tasarımı.
+            </p>
+
+            <div class="price">300 TL</div>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">♛</div>
+
+            <h3>Royal Paket</h3>
+
+            <p>
+                Saç, sakal ve premium bakımın
+                bir arada olduğu özel deneyim.
+            </p>
+
+            <div class="price">700 TL</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="hakkimizda">
+
+    <div class="section-label">ROYAL BARBER</div>
+
+    <h2 class="title">Sadece Bir Kesim Değil.</h2>
+
+    <p class="about-text">
+        Royal Barber olarak erkek bakımını sıradan bir hizmet
+        olarak görmüyoruz. Her müşterimize özel stil,
+        kaliteli hizmet ve rahat bir atmosfer sunuyoruz.
+        Çünkü iyi görünmek bir detay değil, bir duruştur.
+    </p>
+
+</section>
+
+
+<section class="contact" id="iletisim">
+
+    <div class="section-label">İLETİŞİM</div>
+
+    <h2 class="title">Randevunuzu Oluşturun</h2>
+
+    <div class="contact-info">
+
+        <div class="contact-item">
+            <span>ADRES</span>
+            <p>İstanbul, Türkiye</p>
+        </div>
+
+        <div class="contact-item">
+            <span>TELEFON</span>
+            <p>0555 555 55 55</p>
+        </div>
+
+        <div class="contact-item">
+            <span>INSTAGRAM</span>
+            <p>@royalbarber</p>
+        </div>
+
+    </div>
+
+    <a
+        class="button"
+        href="https://wa.me/905555555555"
+        target="_blank">
+        WHATSAPP'TAN RANDEVU
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 ROYAL BARBER — PREMIUM MEN'S GROOMING
+</footer>
+
+</body>
+</html>
